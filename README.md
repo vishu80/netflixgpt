@@ -25,6 +25,11 @@ api_access_token=eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMWRjOWM5YzI4OGMzN2NkODg4MjRmZG
 //omdb movie
 STEP#1 login to TMDB AND GO TO EDIT SECTION GO TO API Section find yout api key and access token
 
+
+// gpt search feature
+-created gpt search bar
+-gpt search page
+-(**Feature) multi-language feature in our app
 before login
 -Signup page 
 

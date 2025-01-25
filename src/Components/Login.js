@@ -2,14 +2,18 @@ import React, { useState, useRef } from "react";
 import Header from "./Header";
 import { checkForValidation } from "../utlis/validate";
 import { auth } from "../utlis/firebase";
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
-import { useDispatch,useSelector } from "react-redux";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { useDispatch, useSelector } from "react-redux";
 import { addUserDetails } from "../utlis/userSlice";
 import { useNavigate } from "react-router-dom";
+import { IMAGE_BACKGROUND_URL } from "../utlis/constant";
 
 const Login = () => {
-  const dispatch=useDispatch();
-  const navigate=useNavigate()
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isSignup, setIsSignup] = useState(false);
   const [error, setErrorMessage] = useState(null);
   const email = useRef();
@@ -36,12 +40,14 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          const {email,displayName,photoURL}=user;
-          dispatch(addUserDetails({
-            email:email,
-            displayName:displayName,
-            // photoURL:photoURL,
-          }))
+          const { email, displayName, photoURL } = user;
+          dispatch(
+            addUserDetails({
+              email: email,
+              displayName: displayName,
+              // photoURL:photoURL,
+            })
+          );
           // ...
         })
         .catch((error) => {
@@ -59,12 +65,14 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          const {email,displayName,photoURL}=user
-          dispatch(addUserDetails({
-            email:email,
-            displayName:displayName,
-            // photoURL:photoURL,
-          }))
+          const { email, displayName, photoURL } = user;
+          dispatch(
+            addUserDetails({
+              email: email,
+              displayName: displayName,
+              // photoURL:photoURL,
+            })
+          );
 
           // ...
         })
@@ -80,8 +88,7 @@ const Login = () => {
       <Header />
       <div className="absolute top-0 left-0 right-0 bottom-0 ">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/2f5a878d-bbce-451b-836a-398227a34fbf/web/IN-en-20241230-TRIFECTA-perspective_5ab944a5-1a71-4f6d-b341-8699d0491edd_large.jpg
-"
+          src={IMAGE_BACKGROUND_URL}
           alt="bckground"
         />
       </div>

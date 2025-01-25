@@ -13,4 +13,13 @@ export const options = {
 export const POPULAR_MOVIES_URL='https://www.omdbapi.com/?apikey=b3e5f534&s=popular'
 
 export const API_KEY = "AIzaSyDb4OO5FPCQk8L6vbmQBhT4HnMhV1ShIhU";
-export const IMAGE_CDN_URL='https://image.tmdb.org/t/p/w500/'
+export const IMAGE_CDN_URL='https://image.tmdb.org/t/p/w500/';
+
+export const IMAGE_BACKGROUND_URL='https://assets.nflxext.com/ffe/siteui/vlv3/2f5a878d-bbce-451b-836a-398227a34fbf/web/IN-en-20241230-TRIFECTA-perspective_5ab944a5-1a71-4f6d-b341-8699d0491edd_large.jpg'
+
+export const SUPPORTED_LANGUAGE=[{
+  identifier:'en',name:'English'},
+  {identifier:'hindi',name:'Hindi'},
+
+  {identifier:'spanish',name:'Spanish'}
+]
